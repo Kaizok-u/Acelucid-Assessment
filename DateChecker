@@ -1,0 +1,41 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assignment01
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Enter a date according to format (MMDDYYYY): ");
+            string input = Console.ReadLine();
+
+            if (IsValidDate(input))
+            {
+                Console.WriteLine("It is a Valid date!");
+            }
+            else
+            {
+                Console.WriteLine("Invalid date!");
+            }
+            Console.Read();
+        }
+
+        static bool IsValidDate(string input)
+        {
+            string dateFormat = "MMddyyyy";
+            if (DateTime.TryParseExact(input, dateFormat, null, System.Globalization.DateTimeStyles.None, out DateTime result))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+           
+        }
+    }
+}
