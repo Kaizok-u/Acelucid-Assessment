@@ -1,0 +1,41 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assignment
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Enter the height of triangle:");
+            if (int.TryParse(Console.ReadLine(), out int heightofTriangle))
+            {
+                for (int i = 1; i <= heightofTriangle; i++)
+
+                {
+
+                    for (int j = 1; j <= (heightofTriangle - i); j++)
+
+                        Console.Write(" ");
+
+
+                    for (int t = 1; t < i * 2; t++)
+
+                        Console.Write("*");
+
+                    Console.WriteLine();
+
+                }
+            }
+
+            else
+            {
+                Console.Write("Please enter a valid number.");
+            }
+            Console.Read();
+        }
+    }
+}
